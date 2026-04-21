@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        // Cache reference once (better than calling every time)
+        
         cam = FindObjectOfType<CameraFOVController>();
     }
 
@@ -19,22 +19,22 @@ public class Coin : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        // 💰 Add coins
+        
         CoinManager.Instance.AddCoins(value);
 
-        // 🎥 Camera feedback (shake + FOV kick)
+        
         if (cam != null)
         {
-            cam.PlayCollectFeedback();
+            //cam.PlayCollectFeedback();
         }
 
-        // ✨ Optional VFX
+        
         if (collectFX != null)
         {
             Instantiate(collectFX, transform.position, Quaternion.identity);
         }
 
-        // ❌ Destroy coin
+        
         Destroy(gameObject);
     }
 

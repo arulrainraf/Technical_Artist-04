@@ -28,7 +28,7 @@ public class CameraFOVController : MonoBehaviour
     {
         if (cineCam == null || movingBody == null) return;
 
-        // 🎯 Speed-based FOV
+        
         float t = Mathf.InverseLerp(0f, maxSpeed, movingBody.CurrentSpeed);
         float targetFOV = Mathf.Lerp(minFOV, maxFOV, t);
 
@@ -39,13 +39,13 @@ public class CameraFOVController : MonoBehaviour
         );
     }
 
-    // 💥 Call this when coin is collected
+    
     public void PlayCollectFeedback()
     {
         StopAllCoroutines();
         StartCoroutine(ShakeRoutine());
 
-        // ✨ Small FOV punch
+        
         cineCam.Lens.FieldOfView += 2f;
     }
 

@@ -16,11 +16,11 @@ public class MovingBody : MonoBehaviour
 
     private void Update()
     {
-        // ⏫ Gradually increase speed
+        
         currentSpeed += acceleration * Time.deltaTime;
         currentSpeed = Mathf.Clamp(currentSpeed, startSpeed, maxSpeed);
 
-        // 🚗 Move ground
+        
         transform.position -= Vector3.forward * currentSpeed * Time.deltaTime;
     }
 }
